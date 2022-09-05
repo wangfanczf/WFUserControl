@@ -1,0 +1,36 @@
+﻿<Window x:Class="Demo.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:WFUserControl="clr-namespace:WFUserControl;assembly=WFUserControl"
+        Loaded="Window_Loaded"
+        mc:Ignorable="d"
+        Title="Window1" Height="200" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <WFUserControl:UserTreeView Name="treeView" CheckBoxVisible="False" IsRecursionCheckSubItems="True" IsAnchoredToSelectedItem="True" ItemsSource="{Binding Nodes}"
+                                             ItemClick="treeView_ItemClick" ItemDoubleClick="treeView_ItemDoubleClick" ItemExpanded="treeView_ItemExpanded" ItemCollapsed="treeView_ItemCollapsed"
+                                             ContextMenuOpening="treeView_ContextMenuOpening" BorderThickness="1" BorderBrush="Red">
+                <WFUserControl:UserTreeView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="菜单1"/>
+                        <MenuItem Header="菜单2"/>
+                        <MenuItem Header="菜单3"/>
+                    </ContextMenu>
+                </WFUserControl:UserTreeView.ContextMenu>
+            </WFUserControl:UserTreeView>
+            <Button Grid.Row="1" Width="100" Margin="-150,0,0,0" Content="获取所有勾选节点" Click="Button_Click"/>
+            <Button x:Name="buttonAdd" Grid.Row="1" Width="100" Margin="150,0,0,0" Content="增加节点" Click="buttonAdd_Click"/>
+        </Grid>
+        <ListBox x:Name="listBox" Grid.Column="1" DisplayMemberPath="Text"></ListBox>
+    </Grid>
+</Window>

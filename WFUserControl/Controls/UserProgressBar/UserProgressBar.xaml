@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="WFUserControl.UserProgressBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="64.191" d:DesignWidth="805.294">
+    <Grid>
+        <ProgressBar x:Name="progressBar" Panel.ZIndex="0" Foreground="#FF22C740"/>
+        <Label Name="label" Panel.ZIndex="1" Content="0%" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Black" FontSize="14" Foreground="#FF4A4A4A" />
+    </Grid>
+</UserControl>

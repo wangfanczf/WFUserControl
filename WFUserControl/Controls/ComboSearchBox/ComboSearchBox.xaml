@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WFUserControl.ComboSearchBox"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:WF="clr-namespace:WFCustomControl;assembly=WFCustomControl"
+			 xmlns:local="clr-namespace:WFUserControl"
+			 mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="100">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/WFUserControl;component/Styles/Dictionary_Button.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<local:SizeConverter x:Key="SizeConverter"/>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Border x:Name="border" BorderBrush="#E4E4E4" BorderThickness="1">
+		<StackPanel Orientation="Horizontal">
+			<Label x:Name="label" VerticalContentAlignment="Center" Width="{Binding ElementName=border, Path=ActualWidth, Converter={StaticResource SizeConverter}, ConverterParameter=-20}"/>
+			<Button Width="20" Style="{StaticResource ButtonStyle_DropDown}" Click="Button_Click"/>
+			<WF:HdtPopup Name="popup" MinWidth="{Binding ElementName=border, Path=ActualWidth}" StaysOpen="False" 
+						 PlacementTarget="{Binding ElementName=textBlock}" Placement="Bottom" HorizontalOffset="-1">
+				<Border>
+					<StackPanel Orientation="Vertical">
+						<WF:TipTextBox Name="textBox" KeyDown="TipTextBox_KeyDown" TipText="输入关键词回车搜索"></WF:TipTextBox>
+						<ListBox x:Name="listBox" SelectionChanged="listBox_SelectionChanged"/>
+					</StackPanel>
+				</Border>
+			</WF:HdtPopup>
+		</StackPanel>
+	</Border>
+</UserControl>

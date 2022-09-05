@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+	<id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>汪帆</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<projectUrl>https://gitee.com/wangfan688/WFUserControl</projectUrl>
+    <license type="expression">MIT</license>
+    <description>WPF用户控件库</description>
+    <copyright>$copyright$</copyright>
+    <tags>Tag1 Tag2</tags>
+  </metadata>
+</package>

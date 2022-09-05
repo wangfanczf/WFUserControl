@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--控件获得焦点时，不显示虚线框-->
+    <Style x:Key="FocusVisual_None">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--通用深色背景-->
+    <SolidColorBrush x:Key="DarkBackgroundColor" Color="#FFF0F0F0"/>
+    
+    <!--灰色边框-->
+    <SolidColorBrush x:Key="GrayBorderColor" Color="#C4C6CB"/>
+    
+    <!--数据项字体颜色-->
+    <SolidColorBrush x:Key="DataFontColor" Color="#4A4A4A"/>
+</ResourceDictionary>
